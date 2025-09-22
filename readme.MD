@@ -52,6 +52,7 @@ bun run test         # Run unit tests
 
 - **Header** - Title and subtitle combination
 - **TaskItem** - Individual task display with edit/delete actions
+- **TaskStats** - Stats gather together
 
 ### Organisms
 
@@ -73,14 +74,3 @@ bun run test         # Run unit tests
 **Brutalist Design**: Raw, unpolished aesthetic with thick borders, bold typography, and high contrast colors.
 
 **Framer Motion**: Enhance the UX/UI experience with smoothless animations
-
-## Tech Stack
-
-- Next.js
-- TypeScript
-- CSS Modules
-- Local Storage
-
-```
-
-```
