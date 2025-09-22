@@ -1,0 +1,66 @@
+.taskItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+  padding: var(--space);
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  transition: var(--transition);
+  margin-bottom: 8px;
+}
+
+.taskItem:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px var(--black);
+}
+
+.taskItem.completed {
+  background: #f8f8f8;
+  border-color: #e8e8e8;
+}
+
+.displayContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+}
+
+.taskName {
+  flex: 1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.actions {
+  display: flex;
+  gap: calc(var(--space) * 0.5);
+  opacity: 0;
+  transition: opacity var(--transition);
+  align-items: center;
+}
+
+.taskItem:hover .actions {
+  opacity: 1;
+}
+
+.editContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space) * 0.5);
+}
+
+.editContainer .button {
+  flex-shrink: 0;
+}
+
+.inputEdit {
+  padding: calc(var(--space) * 0.5) calc(var(--space) * 0.75);
+  font-size: 1rem;
+}

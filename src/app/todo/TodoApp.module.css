@@ -1,0 +1,30 @@
+.todoApp {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 1.5);
+  border-radius: var(--border-radius);
+  min-height: calc(100vh - 2 * var(--space));
+}
+
+@media (max-width: 768px) {
+  .todoApp {
+    max-width: 100%;
+    margin: 0;
+    padding: var(--space);
+    gap: var(--space);
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .todoApp {
+    padding: var(--space);
+    gap: calc(var(--space) * 0.8);
+  }
+}

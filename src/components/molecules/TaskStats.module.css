@@ -1,0 +1,20 @@
+.taskStats {
+  display: flex;
+  gap: var(--space);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .taskStats {
+    gap: calc(var(--space) * 0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .taskStats {
+    flex-direction: column;
+    gap: calc(var(--space) * 0.6);
+  }
+}

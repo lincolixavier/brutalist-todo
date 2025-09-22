@@ -1,0 +1,35 @@
+.taskForm {
+  display: flex;
+  gap: var(--space);
+  padding: var(--space);
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 0px 0px var(--black);
+  transition: var(--transition);
+  align-items: stretch;
+}
+
+.taskForm:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--black);
+}
+
+.taskForm input {
+  flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .taskForm {
+    flex-direction: column;
+    gap: calc(var(--space) * 0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .taskForm {
+    padding: calc(var(--space) * 0.8);
+    gap: calc(var(--space) * 0.6);
+  }
+}
