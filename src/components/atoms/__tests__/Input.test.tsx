@@ -19,18 +19,9 @@ describe('Input Component', () => {
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
 
-  it('calls onKeyPress when key is pressed', () => {
-    const handleKeyPress = vi.fn();
-    render(<Input value='' onChange={vi.fn()} onKeyPress={handleKeyPress} />);
-
-    // Skip this test for now as keyboard events are not working properly in the test environment
-    // This is a known limitation with some testing environments
-    expect(true).toBe(true);
-  });
-
   it('applies correct type attribute', () => {
     const { rerender } = render(
-      <Input value='' onChange={vi.fn()} type='text' />
+      <Input value='' onChange={vi.fn()} type='text' />,
     );
     expect(screen.getByRole('textbox')).toHaveAttribute('type', 'text');
 

@@ -3,7 +3,6 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 import { useLocalStorage } from '../useLocalStorage';
 
-// Mock localStorage
 const localStorageMock = (() => {
   let store: Record<string, string> = {};
 
@@ -53,7 +52,7 @@ describe('useLocalStorage Hook', () => {
 
     expect(result.current[0]).toBe('new value');
     expect(localStorageMock.getItem('test-key')).toBe(
-      JSON.stringify('new value')
+      JSON.stringify('new value'),
     );
   });
 
@@ -71,7 +70,7 @@ describe('useLocalStorage Hook', () => {
   it('handles complex objects', () => {
     const initialValue = { name: 'test', count: 0 };
     const { result } = renderHook(() =>
-      useLocalStorage('test-key', initialValue)
+      useLocalStorage('test-key', initialValue),
     );
 
     act(() => {
@@ -80,30 +79,28 @@ describe('useLocalStorage Hook', () => {
 
     expect(result.current[0]).toEqual({ name: 'updated', count: 5 });
     expect(localStorageMock.getItem('test-key')).toBe(
-      JSON.stringify({ name: 'updated', count: 5 })
+      JSON.stringify({ name: 'updated', count: 5 }),
     );
   });
 
   it('handles localStorage errors gracefully', () => {
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
-    // Mock localStorage.getItem to throw an error
     const originalGetItem = localStorageMock.getItem;
     localStorageMock.getItem = vi.fn(() => {
       throw new Error('localStorage error');
     });
 
     const { result } = renderHook(() =>
-      useLocalStorage('test-key', 'fallback')
+      useLocalStorage('test-key', 'fallback'),
     );
 
     expect(result.current[0]).toBe('fallback');
     expect(consoleSpy).toHaveBeenCalledWith(
       'Error reading localStorage key "test-key":',
-      expect.any(Error)
+      expect.any(Error),
     );
 
-    // Restore
     localStorageMock.getItem = originalGetItem;
     consoleSpy.mockRestore();
   });
@@ -113,7 +110,7 @@ describe('useLocalStorage Hook', () => {
     localStorageMock.setItem('test-key', 'invalid json');
 
     const { result } = renderHook(() =>
-      useLocalStorage('test-key', 'fallback')
+      useLocalStorage('test-key', 'fallback'),
     );
 
     expect(result.current[0]).toBe('fallback');

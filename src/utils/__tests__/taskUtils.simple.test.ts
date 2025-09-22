@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
 
+import { Task } from '@/models/task';
+
 import {
   createTask,
   toggleTask,
@@ -79,7 +81,7 @@ describe('Task Utils - Core Business Logic', () => {
 
   describe('getTaskStats', () => {
     it('should return zero stats for empty list', () => {
-      const emptyTasks: any[] = [];
+      const emptyTasks: Task[] = [];
 
       const stats = getTaskStats(emptyTasks);
 

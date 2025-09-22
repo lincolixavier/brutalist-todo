@@ -22,7 +22,6 @@ describe('Header Component', () => {
     render(<Header title='' subtitle='' />);
 
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-    // Just check that the elements exist, don't worry about empty text content
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 

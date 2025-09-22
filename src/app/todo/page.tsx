@@ -43,7 +43,7 @@ const TodoPage = () => {
 
   const toggleTaskComplete = (id: string) => {
     setTasks(currentTasks =>
-      currentTasks.map(task => (task.id === id ? toggleTask(task) : task))
+      currentTasks.map(task => (task.id === id ? toggleTask(task) : task)),
     );
   };
 
@@ -66,8 +66,8 @@ const TodoPage = () => {
     }
     setTasks(currentTasks =>
       currentTasks.map(task =>
-        task.id === id ? updateTaskName(task, editingText) : task
-      )
+        task.id === id ? updateTaskName(task, editingText) : task,
+      ),
     );
     setEditingTask(null);
     setEditingText('');

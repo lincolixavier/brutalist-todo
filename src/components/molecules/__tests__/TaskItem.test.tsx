@@ -60,7 +60,7 @@ describe('TaskItem Component', () => {
 
   it('shows editing mode when isEditing is true', () => {
     render(
-      <TaskItem {...defaultProps} isEditing={true} editingText='Editing text' />
+      <TaskItem {...defaultProps} isEditing={true} editingText='Editing text' />,
     );
     expect(screen.getByDisplayValue('Editing text')).toBeInTheDocument();
     expect(screen.getByText('SAVE')).toBeInTheDocument();
@@ -100,7 +100,6 @@ describe('TaskItem Component', () => {
   it('applies completed class when task is completed', () => {
     const completedTask = { ...mockTask, completed: true };
     render(<TaskItem {...defaultProps} task={completedTask} />);
-    // Look for the outermost div that should have the completed class
     const taskItem = screen
       .getByText('Test task')
       .closest('div')?.parentElement;

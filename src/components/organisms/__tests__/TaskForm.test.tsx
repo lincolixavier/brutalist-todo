@@ -18,7 +18,7 @@ describe('TaskForm Component', () => {
     render(<TaskForm {...defaultProps} />);
 
     expect(
-      screen.getByPlaceholderText('ENTER TASK NAME...')
+      screen.getByPlaceholderText('ENTER TASK NAME...'),
     ).toBeInTheDocument();
     expect(screen.getByText('ADD TASK')).toBeInTheDocument();
   });

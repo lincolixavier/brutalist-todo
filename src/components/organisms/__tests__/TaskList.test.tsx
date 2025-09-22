@@ -115,7 +115,7 @@ describe('TaskList Component', () => {
 
   it('renders task in editing mode when editingTask matches task id', () => {
     render(
-      <TaskList {...defaultProps} editingTask='1' editingText='Editing task' />
+      <TaskList {...defaultProps} editingTask='1' editingText='Editing task' />,
     );
 
     expect(screen.getByDisplayValue('Editing task')).toBeInTheDocument();

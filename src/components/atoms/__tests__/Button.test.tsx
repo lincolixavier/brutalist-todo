@@ -7,7 +7,7 @@ describe('Button Component', () => {
   it('renders with children', () => {
     render(<Button>Click me</Button>);
     expect(
-      screen.getByRole('button', { name: 'Click me' })
+      screen.getByRole('button', { name: 'Click me' }),
     ).toBeInTheDocument();
   });
 
@@ -24,7 +24,7 @@ describe('Button Component', () => {
     render(
       <Button onClick={handleClick} disabled>
         Click me
-      </Button>
+      </Button>,
     );
 
     fireEvent.click(screen.getByRole('button'));
