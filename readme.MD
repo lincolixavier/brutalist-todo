@@ -3,7 +3,7 @@
 A minimalist todo app built with NextJs and Atomic Design principles.
 Brutalist style inspired by [Brutalist Websites](https://brutalistwebsites.com/).
 
-Demo: (https://brutalist-task-manager.vercel.app/)[https://brutalist-task-manager.vercel.app/]
+Demo: [brutalist-task-manager.vercel.app](https://brutalist-task-manager.vercel.app/)
 
 
 ## Requirements
