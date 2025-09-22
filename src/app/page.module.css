@@ -1,0 +1,151 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space);
+  background: var(--white);
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  padding: var(--space-2);
+  background: var(--white);
+  border: 3px solid var(--black);
+  border-radius: var(--border-radius);
+  box-shadow: 8px 8px 0px 0px var(--black);
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--black);
+  margin: 0 0 var(--space) 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gray);
+  margin: 0 0 var(--space-2) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.description {
+  margin-bottom: var(--space-2);
+}
+
+.description p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--black);
+  margin: 0;
+}
+
+.actions {
+  margin-bottom: var(--space-2);
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: var(--space) var(--space-2);
+  background: var(--primary);
+  color: var(--black);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 3px solid var(--black);
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 0px 0px var(--black);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--black);
+  background: var(--secondary);
+}
+
+.ctaButton:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0px 0px var(--black);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space);
+  margin-top: var(--space-2);
+}
+
+.feature {
+  padding: var(--space);
+  background: #f8f8f8;
+  border: 2px solid var(--black);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.feature h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0 0 calc(var(--space) * 0.5) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.feature p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: var(--space);
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: calc(var(--space) * 0.8) var(--space);
+  }
+}

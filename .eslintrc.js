@@ -19,7 +19,7 @@ module.exports = {
     // General code quality rules
     'no-console': 'warn',
     'no-debugger': 'error',
-    'no-unused-vars': 'off', // Use TypeScript version instead
+    'no-unused-vars': 'off',
     'prefer-const': 'error',
     'no-var': 'error',
     eqeqeq: ['error', 'always'],

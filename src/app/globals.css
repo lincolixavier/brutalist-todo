@@ -9,7 +9,8 @@
   --space-2: 24px;
   --max-width: 800px;
   --border-radius: 8px;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;700;900&display=swap');
@@ -63,11 +64,11 @@ body {
   :root {
     --space: 12px;
   }
-  
+
   .app {
     padding: var(--space);
   }
-  
+
   body {
     font-size: 0.9rem;
   }
@@ -77,11 +78,11 @@ body {
   :root {
     --space: 8px;
   }
-  
+
   .app {
     padding: var(--space);
   }
-  
+
   body {
     font-size: 0.85rem;
   }

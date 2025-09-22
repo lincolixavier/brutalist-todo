@@ -52,16 +52,16 @@
   .taskList {
     gap: calc(var(--space) * 0.8);
   }
-  
+
   .emptyState {
     padding: var(--space);
     min-height: 150px;
   }
-  
+
   .emptyTitle {
     font-size: 1.25rem;
   }
-  
+
   .actions {
     flex-direction: column;
     gap: calc(var(--space) * 0.8);
@@ -72,16 +72,16 @@
   .taskList {
     gap: calc(var(--space) * 0.6);
   }
-  
+
   .emptyState {
     padding: calc(var(--space) * 0.8);
     min-height: 120px;
   }
-  
+
   .emptyTitle {
     font-size: 1.1rem;
   }
-  
+
   .emptyDescription {
     font-size: 0.9rem;
   }

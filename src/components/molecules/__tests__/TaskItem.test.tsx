@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 import { Task } from '@/models/task';
 
@@ -59,40 +59,30 @@ describe('TaskItem Component', () => {
   });
 
   it('shows editing mode when isEditing is true', () => {
-    render(<TaskItem {...defaultProps} isEditing={true} editingText="Editing text" />);
+    render(
+      <TaskItem {...defaultProps} isEditing={true} editingText='Editing text' />
+    );
     expect(screen.getByDisplayValue('Editing text')).toBeInTheDocument();
     expect(screen.getByText('SAVE')).toBeInTheDocument();
     expect(screen.getByText('CANCEL')).toBeInTheDocument();
   });
 
   it('calls onEditTextChange when editing input changes', () => {
-    render(<TaskItem {...defaultProps} isEditing={true} editingText="" />);
-    fireEvent.change(screen.getByDisplayValue(''), { target: { value: 'new text' } });
+    render(<TaskItem {...defaultProps} isEditing={true} editingText='' />);
+    fireEvent.change(screen.getByDisplayValue(''), {
+      target: { value: 'new text' },
+    });
     expect(defaultProps.onEditTextChange).toHaveBeenCalledWith('new text');
   });
 
-  it('calls onSaveEdit when Enter key is pressed', () => {
-    render(<TaskItem {...defaultProps} isEditing={true} editingText="test" />);
-    // Skip this test for now as keyboard events are not working properly in the test environment
-    // This is a known limitation with some testing environments
-    expect(true).toBe(true);
-  });
-
-  it('calls onCancelEdit when Escape key is pressed', () => {
-    render(<TaskItem {...defaultProps} isEditing={true} editingText="test" />);
-    // Skip this test for now as keyboard events are not working properly in the test environment
-    // This is a known limitation with some testing environments
-    expect(true).toBe(true);
-  });
-
   it('calls onSaveEdit when save button is clicked', () => {
-    render(<TaskItem {...defaultProps} isEditing={true} editingText="test" />);
+    render(<TaskItem {...defaultProps} isEditing={true} editingText='test' />);
     fireEvent.click(screen.getByText('SAVE'));
     expect(defaultProps.onSaveEdit).toHaveBeenCalledWith('1');
   });
 
   it('calls onCancelEdit when cancel button is clicked', () => {
-    render(<TaskItem {...defaultProps} isEditing={true} editingText="test" />);
+    render(<TaskItem {...defaultProps} isEditing={true} editingText='test' />);
     fireEvent.click(screen.getByText('CANCEL'));
     expect(defaultProps.onCancelEdit).toHaveBeenCalled();
   });
@@ -111,7 +101,9 @@ describe('TaskItem Component', () => {
     const completedTask = { ...mockTask, completed: true };
     render(<TaskItem {...defaultProps} task={completedTask} />);
     // Look for the outermost div that should have the completed class
-    const taskItem = screen.getByText('Test task').closest('div')?.parentElement;
+    const taskItem = screen
+      .getByText('Test task')
+      .closest('div')?.parentElement;
     expect(taskItem?.className).toContain('completed');
   });
 });

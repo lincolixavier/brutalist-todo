@@ -9,7 +9,6 @@ import { Task } from '@/models/task';
 
 import styles from './TaskList.module.css';
 
-
 interface TaskListProps {
   tasks: Task[];
   editingTask: string | null;
@@ -38,13 +37,13 @@ const TaskList = ({
   const completedCount = tasks.filter(task => task.completed).length;
 
   const renderEmptyState = () => (
-    <motion.div 
+    <motion.div
       className={styles.emptyState}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.h3 
+      <motion.h3
         className={styles.emptyTitle}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -52,7 +51,7 @@ const TaskList = ({
       >
         NO TASKS
       </motion.h3>
-      <motion.p 
+      <motion.p
         className={styles.emptyDescription}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -84,7 +83,7 @@ const TaskList = ({
     }
 
     return (
-      <motion.div 
+      <motion.div
         className={styles.actions}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -99,7 +98,7 @@ const TaskList = ({
 
   return (
     <>
-      <motion.div 
+      <motion.div
         className={styles.taskList}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -25,7 +25,6 @@ const Input = ({
   autoFocus = false,
   disabled = false,
 }: InputProps) => {
-
   return (
     <motion.div
       className={styles.inputContainer}

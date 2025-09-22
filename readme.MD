@@ -27,16 +27,17 @@ bun run lint         # Run ESLint
 bun run lint:fix     # Fix ESLint errors automatically
 bun run format       # Format code with Prettier
 bun run format:check # Check code formatting
-
+bun run test         # Run unit tests
 ```
+
 ## Features
+
 - Add tasks
 - List with checkbox
 - Mark as completed
 - Remove completed tasks
 - Edit task names
 - Persistence in Local Storage
-- 
 
 ## Atomic Design Decisions
 
@@ -45,8 +46,7 @@ bun run format:check # Check code formatting
 - **Button** - Reusable button with variants
 - **Input** - Form input with focus states and validation
 - **Checkbox** - Custom checkbox for task completion
-- **StatItem** - Stat label content 
-
+- **StatItem** - Stat label content
 
 ### Molecules
 

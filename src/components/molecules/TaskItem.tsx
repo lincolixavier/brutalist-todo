@@ -61,11 +61,13 @@ const TaskItem = ({
             className={styles.inputEdit}
           />
           <Button onClick={() => onSaveEdit(task.id)}>SAVE</Button>
-          <Button variant='danger' onClick={onCancelEdit}>CANCEL</Button>
+          <Button variant='danger' onClick={onCancelEdit}>
+            CANCEL
+          </Button>
         </div>
       ) : (
         <div className={styles.displayContainer}>
-          <span 
+          <span
             className={styles.taskName}
             style={{
               textDecoration: task.completed ? 'line-through' : 'none',

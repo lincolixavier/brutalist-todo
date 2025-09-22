@@ -14,11 +14,7 @@ interface TaskFormProps {
   onAddTask: (task: string) => void;
 }
 
-const TaskForm = ({
-  newTask,
-  onTaskChange,
-  onAddTask,
-}: TaskFormProps) => {
+const TaskForm = ({ newTask, onTaskChange, onAddTask }: TaskFormProps) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onTaskChange(e.target.value);
   };
@@ -36,7 +32,7 @@ const TaskForm = ({
   const isDisabled = !newTask.trim();
 
   return (
-    <motion.div 
+    <motion.div
       className={styles.taskForm}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}

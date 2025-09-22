@@ -29,7 +29,7 @@ const Button = ({
       className={buttonClass}
       onClick={onClick}
       disabled={disabled}
-      whileTap={{ 
+      whileTap={{
         scale: disabled ? 1 : 0.95,
         transition: { duration: 0.1 },
       }}

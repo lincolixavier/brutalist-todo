@@ -33,20 +33,20 @@ const TaskStats = ({ total, completed, pending }: TaskStatsProps) => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className={styles.taskStats}
       variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+      initial='hidden'
+      animate='visible'
     >
       <motion.div variants={itemVariants}>
-        <StatItem value={total} label="TOTAL" />
+        <StatItem value={total} label='TOTAL' />
       </motion.div>
       <motion.div variants={itemVariants}>
-        <StatItem value={completed} label="DONE" />
+        <StatItem value={completed} label='DONE' />
       </motion.div>
       <motion.div variants={itemVariants}>
-        <StatItem value={pending} label="PENDING" />
+        <StatItem value={pending} label='PENDING' />
       </motion.div>
     </motion.div>
   );

@@ -43,7 +43,7 @@ const TodoPage = () => {
 
   const toggleTaskComplete = (id: string) => {
     setTasks(currentTasks =>
-      currentTasks.map(task => (task.id === id ? toggleTask(task) : task)),
+      currentTasks.map(task => (task.id === id ? toggleTask(task) : task))
     );
   };
 
@@ -66,8 +66,8 @@ const TodoPage = () => {
     }
     setTasks(currentTasks =>
       currentTasks.map(task =>
-        task.id === id ? updateTaskName(task, editingText) : task,
-      ),
+        task.id === id ? updateTaskName(task, editingText) : task
+      )
     );
     setEditingTask(null);
     setEditingText('');
@@ -82,7 +82,7 @@ const TodoPage = () => {
 
   if (isLoading) {
     return (
-      <main className="app" role="main">
+      <main className='app' role='main'>
         <div className={styles.todoApp}>
           <LoadingSpinner />
         </div>
@@ -91,17 +91,16 @@ const TodoPage = () => {
   }
 
   return (
-    <motion.main 
-      className="app" 
-      role="main"
+    <motion.main
+      className='app'
+      role='main'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <div className={styles.todoApp}>
-
-        <motion.section 
-          aria-label="Add new task"
+        <motion.section
+          aria-label='Add new task'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -113,8 +112,8 @@ const TodoPage = () => {
           />
         </motion.section>
 
-        <motion.section 
-          aria-label="Task statistics"
+        <motion.section
+          aria-label='Task statistics'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -126,8 +125,8 @@ const TodoPage = () => {
           />
         </motion.section>
 
-        <motion.section 
-          aria-label="Task list"
+        <motion.section
+          aria-label='Task list'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}

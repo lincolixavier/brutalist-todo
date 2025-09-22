@@ -17,13 +17,13 @@ describe('Checkbox Component', () => {
   it('calls onChange when clicked', () => {
     const handleChange = vi.fn();
     render(<Checkbox checked={false} onChange={handleChange} />);
-    
+
     fireEvent.click(screen.getByRole('checkbox'));
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
 
   it('applies correct id when provided', () => {
-    render(<Checkbox checked={false} onChange={vi.fn()} id="test-checkbox" />);
+    render(<Checkbox checked={false} onChange={vi.fn()} id='test-checkbox' />);
     expect(screen.getByRole('checkbox')).toHaveAttribute('id', 'test-checkbox');
   });
 
